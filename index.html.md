@@ -87,12 +87,37 @@ promise = fetch('{base_url}/web/api/partners', {
 > La solicitud devuelve una estructura JSON tal que:
 
 ```json
-[
-  {
-    "id": "1",
-    "name": "Z64-4002"
-  }
-]
+{
+    "jsonrpc": "2.0",
+    "id": null,
+    "result": [
+        {
+            "id": 7,
+            "name": "ALTA BPO SAC",
+            "vat": "20601681839"
+        },
+        {
+            "id": 3,
+            "name": "Administrator",
+            "vat": false
+        },
+        {
+            "id": 1,
+            "name": "Medcorp",
+            "vat": false
+        },
+        {
+            "id": 8,
+            "name": "MedcorpX",
+            "vat": false
+        },
+        {
+            "id": 9,
+            "name": "vendedor",
+            "vat": false
+        }
+    ]
+}
 ```
 
 Este endpoint devuelve todos los contactos.

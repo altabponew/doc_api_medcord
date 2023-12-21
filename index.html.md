@@ -1,24 +1,3 @@
----
-title: API Reference
-
-language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - python
-  - javascript
-
-
-#includes:
-#  - errors
-
-search: true
-
-code_clipboard: true
-
-meta:
-  - name: description
-    content: Documentation for Alta BPO
----
-
 # Introducción
 
 Bienvenido a la API de Alta BPO.
@@ -121,3 +100,54 @@ promise = fetch('{base_url}/web/api/partners', {
 ```
 
 Este endpoint devuelve todos los contactos.
+
+
+# Tarifas
+
+## Obtener la lista de tarifas
+
+```python
+from requests import request
+
+data = request("{base_url}/web/api/pricelists", headers=headers)
+```
+
+```shell
+curl "{base_url}/web/api/pricelists" \
+  -H "Authorization: xxxxxxxxx"
+```
+
+```javascript
+promise = fetch('{base_url}/web/api/pricelists', {
+  headers: {
+    'Authorization': 'xxxxxxxxx'
+  }
+})
+```
+
+> La solicitud devuelve una estructura JSON tal que:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": null,
+    "result": [
+        {
+            "code": false,
+            "id": 1,
+            "item_ids": [],
+            "name": "Tarifa pública"
+        },
+        {
+            "code": false,
+            "id": 2,
+            "item_ids": [
+                1
+            ],
+            "name": "Tarifa Alta BPO"
+        }
+    ]
+}
+```
+
+Este endpoint devuelve todas las tarifas.

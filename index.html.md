@@ -61,7 +61,7 @@ La variable {base_url} deberá ser reemplazada con el dominio que use la instanc
 Debe reemplazar <code>xxxxxxxxx</code> con su API key.
 </aside>
 
-# Equipos
+# Contactos
 
 ## Obtener la lista de contactos
 

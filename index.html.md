@@ -47,16 +47,16 @@ Debe reemplazar <code>xxxxxxxxx</code> con su API key.
 ```python
 from requests import request
 
-data = request("{base_url}/web/api/partners", headers=headers)
+data = request("{base_url}/web/api/contacts", headers=headers)
 ```
 
 ```shell
-curl "{base_url}/web/api/partners" \
+curl "{base_url}/web/api/contacts" \
   -H "Authorization: xxxxxxxxx"
 ```
 
 ```javascript
-promise = fetch('{base_url}/web/api/partners', {
+promise = fetch('{base_url}/web/api/contacts', {
   headers: {
     'Authorization': 'xxxxxxxxx'
   }

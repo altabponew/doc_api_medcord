@@ -43,7 +43,7 @@ Debe reemplazar <code>xxxxxxxxx</code> con su API key.
 
 # Tarifas
 
-## Obtener la lista de tarifas
+## Obtener Lista de Tarifas
 
 ```python
 from requests import request
@@ -91,7 +91,7 @@ promise = fetch('{base_url}/web/api/pricelists', {
 
 Este endpoint devuelve todas las tarifas.
 
-## Obtener una tarifa especifica
+## Obtener Tarifa
 
 ```python
 from requests import request
@@ -131,7 +131,7 @@ promise = fetch('{base_url}/web/api/pricelists/1', {
 
 Este endpoint devuelve la tarifa correspondiente al ID_TARIFA indicado para el ejemplo 1 = Tarifa pública
 
-## Actualizar una tarifa específica
+## Actualizar Tarifa
 
 # Contactos
 

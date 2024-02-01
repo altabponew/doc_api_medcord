@@ -151,3 +151,48 @@ promise = fetch('{base_url}/web/api/pricelists', {
 ```
 
 Este endpoint devuelve todas las tarifas.
+
+
+## Obtener una tarifa especifica
+
+```python
+from requests import request
+
+data = request("{base_url}/web/api/pricelists/ID_TARIFA", headers=headers)
+```
+
+```shell
+curl "{base_url}/web/api/pricelists/1" \
+  -H "Authorization: xxxxxxxxx"
+```
+
+```javascript
+promise = fetch('{base_url}/web/api/pricelists/1', {
+  headers: {
+    'Authorization': 'xxxxxxxxx'
+  }
+})
+```
+
+> La solicitud devuelve una estructura JSON tal que:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": null,
+    "result": {
+        "code": false,
+        "id": 1,
+        "item_ids": [
+            8
+        ],
+        "name": "Tarifa pública"
+    }
+}
+```
+
+Este endpoint devuelve la tarifa correspondiente al ID_TARIFA indicado para el ejemplo 1 = Tarifa pública
+
+
+## Actualizar una tarifa específica
+

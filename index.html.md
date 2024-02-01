@@ -133,6 +133,68 @@ Este endpoint devuelve la tarifa correspondiente al ID_TARIFA indicado para el e
 
 ## Actualizar Tarifa
 
+```python
+from requests import request
+
+data = requests.put("{base_url}/web/api/pricelist/ID_LINEA_TARIFA", data={
+    "data": {
+        "code": "TP",
+        "name": "Tarifa pública TEST"
+    }
+})
+```
+
+```shell
+curl -H 'Content-Type: application/json' -H "Authorization: xxxxxxxxx" -X PUT -d '{ "data": {
+        "code": "TP",
+        "name": "Tarifa pública TEST"
+    }}' {base_url}/web/api/pricelist/1"`
+
+```
+
+```javascript
+
+const example_put = {
+    method: 'PUT',
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
+    },
+    body: JSON.stringify({
+        "data": {
+            "code": "TP",
+            "name": "Tarifa pública TEST"
+        }
+    })
+}
+
+// make the HTTP put request using fetch api
+fetch('{base_url}/web/api/pricelist/1', example_put)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => console.log(err))
+
+```
+
+> La solicitud devuelve una estructura JSON tal que:
+
+```json
+{
+  "jsonrpc": "2.0",
+  "id": null,
+  "result": {
+    "code": "TP",
+    "id": 1,
+    "item_ids": [
+      8
+    ],
+    "name": "Tarifa pública TEST"
+  }
+}
+```
+
+Este endpoint devuelve la tarifa correspondiente al ID_TARIFA y su estructura actualizada solo es necesario
+enviar los parámetros que se necesiten actualizar.
+
 # Líneas de Tarifa
 
 ## Obtener Líneas de Tarifas
@@ -224,68 +286,6 @@ promise = fetch('{base_url}/web/api/pricelist_items/8', {
 Este endpoint devuelve la línea tarifa correspondiente al ID_LINEA_TARIFA indicado para el ejemplo 8.
 
 ## Actualizar Línea de Tarifa
-
-```python
-from requests import request
-
-data = requests.put("{base_url}/web/api/pricelist/ID_LINEA_TARIFA", data={
-    "data": {
-        "code": "TP",
-        "name": "Tarifa pública TEST"
-    }
-})
-```
-
-```shell
-curl -H 'Content-Type: application/json' -H "Authorization: xxxxxxxxx" -X PUT -d '{ "data": {
-        "code": "TP",
-        "name": "Tarifa pública TEST"
-    }}' {base_url}/web/api/pricelist/1"`
-
-```
-
-```javascript
-
-const example_put = {
-    method: 'PUT',
-    headers: {
-        'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
-    },
-    body: JSON.stringify({
-        "data": {
-            "code": "TP",
-            "name": "Tarifa pública TEST"
-        }
-    })
-}
-
-// make the HTTP put request using fetch api
-fetch('{base_url}/web/api/pricelist/1', example_put)
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
-
-```
-
-> La solicitud devuelve una estructura JSON tal que:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": null,
-  "result": {
-    "code": "TP",
-    "id": 1,
-    "item_ids": [
-      8
-    ],
-    "name": "Tarifa pública TEST"
-  }
-}
-```
-
-Este endpoint devuelve la tarifa correspondiente al ID_TARIFA y su estructura actualizada solo es necesario
-enviar los parámetros que se necesiten actualizar.
 
 ```python
 from requests import request

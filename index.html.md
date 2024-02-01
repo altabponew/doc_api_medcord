@@ -171,33 +171,13 @@ promise = fetch('{base_url}/web/api/pricelist_items', {
       "product_tmpl_id": 36
     },
     {
-      "fixed_price": 13.5,
-      "id": 13,
-      "min_quantity": 0.0,
-      "pricelist_id": 6,
-      "product_tmpl_id": 35
-    },
-    {
-      "fixed_price": 19.8,
-      "id": 12,
-      "min_quantity": 0.0,
-      "pricelist_id": 6,
-      "product_tmpl_id": 34
-    },
-    {
-      "fixed_price": 0.0,
-      "id": 10,
-      "min_quantity": 0.0,
-      "pricelist_id": 2,
-      "product_tmpl_id": 34
-    },
-    {
       "fixed_price": 15.0,
       "id": 8,
       "min_quantity": 0.0,
       "pricelist_id": 1,
       "product_tmpl_id": 34
-    }
+    },
+    ...
   ]
 }
 ```
@@ -412,11 +392,6 @@ promise = fetch('{base_url}/web/api/contacts', {
     {
       "id": 3,
       "name": "Administrator",
-      "vat": false
-    },
-    {
-      "id": 1,
-      "name": "Medcorp",
       "vat": false
     },
     ...

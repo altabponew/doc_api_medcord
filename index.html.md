@@ -408,7 +408,7 @@ Este endpoint devuelve todos los contactos.
 ```python
 from requests import request
 
-data = request("{base_url}/web/api/contacts", headers=headers)
+data = request("{base_url}/web/api/products", headers=headers)
 ```
 
 ```shell

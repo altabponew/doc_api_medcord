@@ -1,8 +1,8 @@
-# Introducción
+# INTRODUCCIÓN
 
 Bienvenido a la API de Alta BPO.
 
-# Autenticación
+# AUTORIZACIÓN
 
 ```python
 from requests import request
@@ -41,322 +41,9 @@ La variable {base_url} deberá ser reemplazada con el dominio que use la instanc
 Debe reemplazar <code>xxxxxxxxx</code> con su API key.
 </aside>
 
-# Tarifas
+# CLIENTES
 
-## Obtener Lista de Tarifas
-
-```python
-from requests import request
-
-data = request("{base_url}/web/api/pricelists", headers=headers)
-```
-
-```shell
-curl "{base_url}/web/api/pricelists" \
-  -H "Authorization: xxxxxxxxx"
-```
-
-```javascript
-promise = fetch('{base_url}/web/api/pricelists', {
-    headers: {
-        'Authorization': 'xxxxxxxxx'
-    }
-})
-```
-
-> La solicitud devuelve una estructura JSON tal que:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": null,
-  "result": [
-    {
-      "code": false,
-      "id": 1,
-      "item_ids": [],
-      "name": "Tarifa pública"
-    },
-    {
-      "code": false,
-      "id": 2,
-      "item_ids": [
-        1
-      ],
-      "name": "Tarifa Alta BPO"
-    }
-  ]
-}
-```
-
-Este endpoint devuelve todas las tarifas.
-
-## Obtener Tarifa
-
-```python
-from requests import request
-
-data = request("{base_url}/web/api/pricelists/ID_TARIFA", headers=headers)
-```
-
-```shell
-curl "{base_url}/web/api/pricelists/1" \
-  -H "Authorization: xxxxxxxxx"
-```
-
-```javascript
-promise = fetch('{base_url}/web/api/pricelists/1', {
-    headers: {
-        'Authorization': 'xxxxxxxxx'
-    }
-})
-```
-
-> La solicitud devuelve una estructura JSON tal que:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": null,
-  "result": {
-    "code": false,
-    "id": 1,
-    "item_ids": [
-      8
-    ],
-    "name": "Tarifa pública"
-  }
-}
-```
-
-Este endpoint devuelve la tarifa correspondiente al ID_TARIFA indicado para el ejemplo 1 = Tarifa pública
-
-## Actualizar Tarifa
-
-```python
-from requests import request
-
-data = requests.put("{base_url}/web/api/pricelist/ID_LINEA_TARIFA", data={
-    "data": {
-        "code": "TP",
-        "name": "Tarifa pública TEST"
-    }
-})
-```
-
-```shell
-curl -H 'Content-Type: application/json' -H "Authorization: xxxxxxxxx" -X PUT -d '{ "data": {
-        "code": "TP",
-        "name": "Tarifa pública TEST"
-    }}' {base_url}/web/api/pricelist/1"`
-
-```
-
-```javascript
-
-const example_put = {
-    method: 'PUT',
-    headers: {
-        'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
-    },
-    body: JSON.stringify({
-        "data": {
-            "code": "TP",
-            "name": "Tarifa pública TEST"
-        }
-    })
-}
-
-// make the HTTP put request using fetch api
-fetch('{base_url}/web/api/pricelist/1', example_put)
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
-
-```
-
-> La solicitud devuelve una estructura JSON tal que:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": null,
-  "result": {
-    "code": "TP",
-    "id": 1,
-    "item_ids": [
-      8
-    ],
-    "name": "Tarifa pública TEST"
-  }
-}
-```
-
-Este endpoint devuelve la tarifa correspondiente al ID_TARIFA y su estructura actualizada solo es necesario
-enviar los parámetros que se necesiten actualizar.
-
-# Líneas de Tarifa
-
-## Obtener Líneas de Tarifas
-
-```python
-from requests import request
-
-data = request("{base_url}/web/api/pricelist_items", headers=headers)
-```
-
-```shell
-curl "{base_url}/web/api/pricelist_items" \
-  -H "Authorization: xxxxxxxxx"
-```
-
-```javascript
-promise = fetch('{base_url}/web/api/pricelist_items', {
-    headers: {
-        'Authorization': 'xxxxxxxxx'
-    }
-})
-```
-
-> La solicitud devuelve una estructura JSON tal que:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": null,
-  "result": [
-    {
-      "fixed_price": 25.5,
-      "id": 14,
-      "min_quantity": 0.0,
-      "pricelist_id": 6,
-      "product_tmpl_id": 36
-    },
-    {
-      "fixed_price": 15.0,
-      "id": 8,
-      "min_quantity": 0.0,
-      "pricelist_id": 1,
-      "product_tmpl_id": 34
-    },
-    ...
-  ]
-}
-```
-
-Este endpoint devuelve todas las lineas de tarifas.
-
-## Obtener Línea de Tarifa
-
-```python
-from requests import request
-
-data = request("{base_url}/web/api/pricelist_items/ID_LINEA_TARIFA", headers=headers)
-```
-
-```shell
-curl "{base_url}/web/api/pricelist_items/8" \
-  -H "Authorization: xxxxxxxxx"
-```
-
-```javascript
-promise = fetch('{base_url}/web/api/pricelist_items/8', {
-    headers: {
-        'Authorization': 'xxxxxxxxx'
-    }
-})
-```
-
-> La solicitud devuelve una estructura JSON tal que:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": null,
-  "result": {
-    "fixed_price": 15.0,
-    "id": 8,
-    "min_quantity": 0.0,
-    "pricelist_id": 1,
-    "product_tmpl_id": 34
-  }
-}
-```
-
-Este endpoint devuelve la línea tarifa correspondiente al ID_LINEA_TARIFA indicado para el ejemplo 8.
-
-## Actualizar Línea de Tarifa
-
-```python
-from requests import request
-
-data = requests.put("{base_url}/web/api/pricelist_items/ID_LINEA_TARIFA", data={
-    "data": {
-        "fixed_price": 20.0,
-        "min_quantity": 0.0,
-        "pricelist_id": 1,
-        "product_tmpl_id": 34
-    }
-})
-```
-
-```shell
-curl -H 'Content-Type: application/json' -H "Authorization: xxxxxxxxx" -X PUT -d '{ "data": {
-        "fixed_price": 20.0,
-        "min_quantity": 0.0,
-        "pricelist_id": 1,
-        "product_tmpl_id": 34
-    }}' {base_url}/web/api/pricelist_items/8"`
-
-```
-
-```javascript
-
-const example_put = {
-    method: 'PUT',
-    headers: {
-        'Content-type': 'application/json; charset=UTF-8' // Indicates the content 
-    },
-    body: JSON.stringify({
-        "data": {
-            "fixed_price": 20.0,
-            "min_quantity": 0.0,
-            "pricelist_id": 1,
-            "product_tmpl_id": 34
-        }
-    })
-}
-
-// make the HTTP put request using fetch api
-fetch('{base_url}/web/api/pricelist_items/8', example_put)
-    .then(response => response.json())
-    .then(data => console.log(data)) // Manipulate the data retrieved back, if we want to do something with it
-    .catch(err => console.log(err)) // Do something with the error
-
-```
-
-> La solicitud devuelve una estructura JSON tal que:
-
-```json
-{
-  "jsonrpc": "2.0",
-  "id": null,
-  "result": {
-    "fixed_price": 20.0,
-    "id": 8,
-    "min_quantity": 0.0,
-    "pricelist_id": 1,
-    "product_tmpl_id": 34
-  }
-}
-```
-
-Este endpoint devuelve la línea tarifa correspondiente al ID_LINEA_TARIFA y su estructura actualizada solo es necesario
-enviar los parámetros que se necesiten actualizar.
-
-# Contactos
-
-## Obtener la lista de contactos
+## Lista de clientes
 
 ```python
 from requests import request
@@ -365,12 +52,12 @@ data = request("{base_url}/web/api/contacts", headers=headers)
 ```
 
 ```shell
-curl "{base_url}/web/api/contacts" \
+curl "{base_url}/web/api/clientes" \
   -H "Authorization: xxxxxxxxx"
 ```
 
 ```javascript
-promise = fetch('{base_url}/web/api/contacts', {
+promise = fetch('{base_url}/web/api/clientes', {
     headers: {
         'Authorization': 'xxxxxxxxx'
     }
@@ -385,39 +72,48 @@ promise = fetch('{base_url}/web/api/contacts', {
   "id": null,
   "result": [
     {
+      "commercial_name": false,
       "id": 7,
-      "name": "ALTA BPO SAC",
+      "name": "ALTA BUSINESS PROCESS OUTSOURCING S.A.C.",
+      "type_customer": "occupational_health",
+      "ubigeo_departament": "15",
+      "ubigeo_district": "15",
+      "ubigeo_province": "0",
       "vat": "20601681839"
     },
     {
-      "id": 3,
-      "name": "Administrator",
-      "vat": false
-    },
-    ...
+      "commercial_name": false,
+      "id": 12,
+      "name": "ROSA EFE MODA S.A.C.",
+      "type_customer": false,
+      "ubigeo_departament": "15",
+      "ubigeo_district": "22",
+      "ubigeo_province": "0",
+      "vat": "20510089368"
+    }
   ]
 }
 ```
 
-Este endpoint devuelve todos los contactos.
+Este endpoint devuelve todos los clientes que tengan una pre-cotización asociada a una orden de venta confirmada.
 
-# Productos
+# TARIFARIOS
 
-## Obtener la lista de productos
+## Lista de tarifarios
 
 ```python
 from requests import request
 
-data = request("{base_url}/web/api/products", headers=headers)
+data = request("{base_url}/web/api/contacts", headers=headers)
 ```
 
 ```shell
-curl "{base_url}/web/api/products" \
+curl "{base_url}/web/api/tarifarios" \
   -H "Authorization: xxxxxxxxx"
 ```
 
 ```javascript
-promise = fetch('{base_url}/web/api/products', {
+promise = fetch('{base_url}/web/api/tarifarios', {
     headers: {
         'Authorization': 'xxxxxxxxx'
     }
@@ -432,41 +128,76 @@ promise = fetch('{base_url}/web/api/products', {
   "id": null,
   "result": [
     {
-      "default_code": false,
-      "id": 15,
-      "list_price": 25.0,
-      "name": "Agudeza visual de lejos y cerca - refracción",
-      "standard_price": 0.0
+      "id": 10,
+      "name": "ALTA BUSINESS PROCESS OUTSOURCING S.A.C._1",
+      "lines": [
+        {
+          "id": 28,
+          "code": "0123",
+          "name": "Evaluación psicológica básica",
+          "price": 25.0
+        },
+        {
+          "id": 27,
+          "code": false,
+          "name": "Psicosensométrico",
+          "price": 15.0
+        }
+      ]
     },
     {
-      "default_code": false,
-      "id": 3,
-      "list_price": 1.0,
-      "name": "Ambulancias: Emergencias y eventos",
-      "standard_price": 0.0
-    },
-    ...
+      "id": 9,
+      "name": "ROSA EFE MODA S.A.C._3",
+      "lines": [
+        {
+          "id": 26,
+          "code": "001",
+          "name": "Examen 1",
+          "price": 17.82
+        },
+        {
+          "id": 25,
+          "code": "002",
+          "name": "Examen 2",
+          "price": 12.15
+        },
+        {
+          "id": 24,
+          "code": "003",
+          "name": "Examen 3",
+          "price": 22.95
+        },
+        {
+          "id": 23,
+          "code": false,
+          "name": "Perfil de Conducta",
+          "price": 36.0
+        }
+      ]
+    }
   ]
 }
 ```
 
-Este endpoint devuelve todos los productos.
+Este endpoint devuelve todos los tarifarios que tengan una pre-cotización asociada a una orden de venta confirmada.
 
-## Obtener Producto
+# PERFILES
+
+## Lista de perfiles
 
 ```python
 from requests import request
 
-data = request("{base_url}/web/api/products/ID_PRODUCTO", headers=headers)
+data = request("{base_url}/web/api/perfiles", headers=headers)
 ```
 
 ```shell
-curl "{base_url}/web/api/products/15" \
+curl "{base_url}/web/api/perfiles" \
   -H "Authorization: xxxxxxxxx"
 ```
 
 ```javascript
-promise = fetch('{base_url}/web/api/products/15', {
+promise = fetch('{base_url}/web/api/perfiles', {
     headers: {
         'Authorization': 'xxxxxxxxx'
     }
@@ -479,14 +210,85 @@ promise = fetch('{base_url}/web/api/products/15', {
 {
   "jsonrpc": "2.0",
   "id": null,
-  "result": {
-    "default_code": false,
-    "id": 15,
-    "list_price": 25.0,
-    "name": "Agudeza visual de lejos y cerca - refracción",
-    "standard_price": 0.0
-  }
+  "result": [
+    {
+      "code": 41,
+      "customer_code": 12,
+      "name": "Perfil Administrador 005",
+      "type_check_code": false,
+      "rate_code": 9,
+      "detail_exams": [
+        {
+          "id": 82,
+          "name": "Examen 1",
+          "price_unit": 19.8
+        },
+        {
+          "id": 83,
+          "name": "Perfil de Conducta",
+          "price_unit": 40.0
+        }
+      ]
+    },
+    {
+      "code": 43,
+      "customer_code": 7,
+      "name": "Perfil Administrador 006",
+      "type_check_code": false,
+      "rate_code": 10,
+      "detail_exams": [
+        {
+          "id": 85,
+          "name": "Evaluación psicológica básica",
+          "price_unit": 25.0
+        },
+        {
+          "id": 86,
+          "name": "Psicosensométrico",
+          "price_unit": 15.0
+        }
+      ]
+    },
+    {
+      "code": 40,
+      "customer_code": 12,
+      "name": "Perfil Operativo 006",
+      "type_check_code": false,
+      "rate_code": 9,
+      "detail_exams": [
+        {
+          "id": 79,
+          "name": "Examen 1",
+          "price_unit": 19.8
+        },
+        {
+          "id": 80,
+          "name": "Examen 2",
+          "price_unit": 13.5
+        },
+        {
+          "id": 81,
+          "name": "Examen 3",
+          "price_unit": 25.5
+        }
+      ]
+    },
+    {
+      "code": 42,
+      "customer_code": 7,
+      "name": "Perfil Operativo 007",
+      "type_check_code": false,
+      "rate_code": 10,
+      "detail_exams": [
+        {
+          "id": 84,
+          "name": "Evaluación psicológica básica",
+          "price_unit": 25.0
+        }
+      ]
+    }
+  ]
 }
 ```
 
-Este endpoint devuelve el producto correspondiente al ID_PRODUCTO indicado para el ejemplo 15.
+Este endpoint devuelve todos los perfiles que tengan una pre-cotización asociada a una orden de venta confirmada.

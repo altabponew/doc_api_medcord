@@ -124,68 +124,68 @@ promise = fetch('{base_url}/web/api/tarifarios', {
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "id": null,
-  "result": [
-    {
-      "code": 11,
-      "name": "ALTA BUSINESS PROCESS OUTSOURCING S.A.C._2",
-      "lines": [
+    "jsonrpc": "2.0",
+    "id": null,
+    "result": [
         {
-          "exam_code": false,
-          "exam_name": "Test de Epworth",
-          "exam_price": 27.0
+            "codigo": 11,
+            "nombre": "ALTA BUSINESS PROCESS OUTSOURCING S.A.C._2",
+            "examnes": [
+                {
+                    "codigo_examen": "897",
+                    "nombre_examen": "Test de Epworth",
+                    "precio_examen": 27.0
+                },
+                {
+                    "codigo_examen": false,
+                    "nombre_examen": "Agudeza visual de lejos y cerca - refracción",
+                    "precio_examen": 22.5
+                }
+            ]
         },
         {
-          "exam_code": false,
-          "exam_name": "Agudeza visual de lejos y cerca - refracción",
-          "exam_price": 22.5
+            "codigo": 10,
+            "nombre": "ALTA BUSINESS PROCESS OUTSOURCING S.A.C._1",
+            "examnes": [
+                {
+                    "codigo_examen": "0123",
+                    "nombre_examen": "Evaluación psicológica básica",
+                    "precio_examen": 25.0
+                },
+                {
+                    "codigo_examen": false,
+                    "nombre_examen": "Psicosensométrico",
+                    "precio_examen": 15.0
+                }
+            ]
+        },
+        {
+            "codigo": 9,
+            "nombre": "ROSA EFE MODA S.A.C._3",
+            "examnes": [
+                {
+                    "codigo_examen": "001",
+                    "nombre_examen": "Examen 1",
+                    "precio_examen": 17.82
+                },
+                {
+                    "codigo_examen": "002",
+                    "nombre_examen": "Examen 2",
+                    "precio_examen": 12.15
+                },
+                {
+                    "codigo_examen": "003",
+                    "nombre_examen": "Examen 3",
+                    "precio_examen": 22.95
+                },
+                {
+                    "codigo_examen": "004",
+                    "nombre_examen": "Examen 4",
+                    "precio_examen": 36.0
+                }
+            ]
         }
-      ]
-    },
-    {
-      "code": 10,
-      "name": "ALTA BUSINESS PROCESS OUTSOURCING S.A.C._1",
-      "lines": [
-        {
-          "exam_code": "0123",
-          "exam_name": "Evaluación psicológica básica",
-          "exam_price": 25.0
-        },
-        {
-          "exam_code": false,
-          "exam_name": "Psicosensométrico",
-          "exam_price": 15.0
-        }
-      ]
-    },
-    {
-      "code": 9,
-      "name": "ROSA EFE MODA S.A.C._3",
-      "lines": [
-        {
-          "exam_code": "001",
-          "exam_name": "Examen 1",
-          "exam_price": 17.82
-        },
-        {
-          "exam_code": "002",
-          "exam_name": "Examen 2",
-          "exam_price": 12.15
-        },
-        {
-          "exam_code": "003",
-          "exam_name": "Examen 3",
-          "exam_price": 22.95
-        },
-        {
-          "exam_code": "004",
-          "exam_name": "Examen 4",
-          "exam_price": 36.0
-        }
-      ]
-    }
-  ]
+    ]
 }
 ```
 
@@ -218,86 +218,86 @@ promise = fetch('{base_url}/web/api/perfiles', {
 
 ```json
 {
-  "jsonrpc": "2.0",
-  "id": null,
-  "result": [
-    {
-      "code": 41,
-      "customer_code": 12,
-      "name": "C1.V2_ADM_OPE#PERFIL ADMINSTRATIVO",
-      "type_check_code": false,
-      "rate_code": 9,
-      "detail_exams": [
+    "jsonrpc": "2.0",
+    "id": null,
+    "result": [
         {
-          "code_exam": 82,
-          "name_exam": "Examen 1",
-          "price_exam": 19.8
+            "codigo_perfil": 41,
+            "codigo_cliente": 12,
+            "nombre_perfil": "C1.V2_ADM_OPE#PERFIL ADMINSTRATIVO",
+            "codigo_chequeo": false,
+            "codigo_tarifario": 9,
+            "examenes": [
+                {
+                    "codigo_examen": "001",
+                    "nombre_examen": "Examen 1",
+                    "precio_examen": 19.8
+                },
+                {
+                    "codigo_examen": "004",
+                    "nombre_examen": "Examen 4",
+                    "precio_examen": 40.0
+                }
+            ]
         },
         {
-          "code_exam": 83,
-          "name_exam": "Examen 4",
-          "price_exam": 40.0
-        }
-      ]
-    },
-    {
-      "code": 40,
-      "customer_code": 12,
-      "name": "C1_ADM_OPE#PERFIL ADMINISTRATIVO",
-      "type_check_code": false,
-      "rate_code": 9,
-      "detail_exams": [
-        {
-          "code_exam": 79,
-          "name_exam": "Examen 1",
-          "price_exam": 19.8
+            "codigo_perfil": 40,
+            "codigo_cliente": 12,
+            "nombre_perfil": "C1_ADM_OPE#PERFIL ADMINISTRATIVO",
+            "codigo_chequeo": false,
+            "codigo_tarifario": 9,
+            "examenes": [
+                {
+                    "codigo_examen": "001",
+                    "nombre_examen": "Examen 1",
+                    "precio_examen": 19.8
+                },
+                {
+                    "codigo_examen": "002",
+                    "nombre_examen": "Examen 2",
+                    "precio_examen": 13.5
+                },
+                {
+                    "codigo_examen": "003",
+                    "nombre_examen": "Examen 3",
+                    "precio_examen": 25.5
+                }
+            ]
         },
         {
-          "code_exam": 80,
-          "name_exam": "Examen 2",
-          "price_exam": 13.5
+            "codigo_perfil": 43,
+            "codigo_cliente": 7,
+            "nombre_perfil": "Perfil Administrador 006",
+            "codigo_chequeo": false,
+            "codigo_tarifario": 10,
+            "examenes": [
+                {
+                    "codigo_examen": "0123",
+                    "nombre_examen": "Evaluación psicológica básica",
+                    "precio_examen": 25.0
+                },
+                {
+                    "codigo_examen": false,
+                    "nombre_examen": "Psicosensométrico",
+                    "precio_examen": 15.0
+                }
+            ]
         },
         {
-          "code_exam": 81,
-          "name_exam": "Examen 3",
-          "price_exam": 25.5
+            "codigo_perfil": 42,
+            "codigo_cliente": 7,
+            "nombre_perfil": "Perfil Operativo 007",
+            "codigo_chequeo": false,
+            "codigo_tarifario": 10,
+            "examenes": [
+                {
+                    "codigo_examen": "0123",
+                    "nombre_examen": "Evaluación psicológica básica",
+                    "precio_examen": 25.0
+                }
+            ]
         }
-      ]
-    },
-    {
-      "code": 43,
-      "customer_code": 7,
-      "name": "Perfil Administrador 006",
-      "type_check_code": false,
-      "rate_code": 10,
-      "detail_exams": [
-        {
-          "code_exam": 85,
-          "name_exam": "Evaluación psicológica básica",
-          "price_exam": 25.0
-        },
-        {
-          "code_exam": 86,
-          "name_exam": "Psicosensométrico",
-          "price_exam": 15.0
-        }
-      ]
-    },
-    {
-      "code": 42,
-      "customer_code": 7,
-      "name": "Perfil Operativo 007",
-      "type_check_code": false,
-      "rate_code": 10,
-      "detail_exams": [
-        {
-          "code_exam": 84,
-          "name_exam": "Evaluación psicológica básica",
-          "price_exam": 25.0
-        }
-      ]
-    }
-  ]
+    ]
 }
 ```
 

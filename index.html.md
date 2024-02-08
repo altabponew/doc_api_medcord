@@ -75,17 +75,17 @@ promise = fetch('{base_url}/web/api/clientes', {
       "commercial_name": false,
       "id": 7,
       "name": "ALTA BUSINESS PROCESS OUTSOURCING S.A.C.",
-      "type_customer": "occupational_health",
+      "type_customer": "2",
       "ubigeo_departament": "15",
       "ubigeo_district": "15",
       "ubigeo_province": "0",
       "vat": "20601681839"
     },
     {
-      "commercial_name": false,
+      "commercial_name": "ROSA FRANCIA",
       "id": 12,
       "name": "ROSA EFE MODA S.A.C.",
-      "type_customer": false,
+      "type_customer": "occupational_health",
       "ubigeo_departament": "15",
       "ubigeo_district": "22",
       "ubigeo_province": "0",
@@ -212,78 +212,60 @@ promise = fetch('{base_url}/web/api/perfiles', {
   "id": null,
   "result": [
     {
-      "code": 41,
-      "customer_code": 12,
-      "name": "Perfil Administrador 005",
-      "type_check_code": false,
-      "rate_code": 9,
-      "detail_exams": [
+      "code": 11,
+      "name": "ALTA BUSINESS PROCESS OUTSOURCING S.A.C._2",
+      "lines": [
         {
-          "id": 82,
-          "name": "Examen 1",
-          "price_unit": 19.8
+          "exam_code": false,
+          "exam_name": "Test de Epworth",
+          "exam_price": 27.0
         },
         {
-          "id": 83,
-          "name": "Perfil de Conducta",
-          "price_unit": 40.0
+          "exam_code": false,
+          "exam_name": "Agudeza visual de lejos y cerca - refracción",
+          "exam_price": 22.5
         }
       ]
     },
     {
-      "code": 43,
-      "customer_code": 7,
-      "name": "Perfil Administrador 006",
-      "type_check_code": false,
-      "rate_code": 10,
-      "detail_exams": [
+      "code": 10,
+      "name": "ALTA BUSINESS PROCESS OUTSOURCING S.A.C._1",
+      "lines": [
         {
-          "id": 85,
-          "name": "Evaluación psicológica básica",
-          "price_unit": 25.0
+          "exam_code": "0123",
+          "exam_name": "Evaluación psicológica básica",
+          "exam_price": 25.0
         },
         {
-          "id": 86,
-          "name": "Psicosensométrico",
-          "price_unit": 15.0
+          "exam_code": false,
+          "exam_name": "Psicosensométrico",
+          "exam_price": 15.0
         }
       ]
     },
     {
-      "code": 40,
-      "customer_code": 12,
-      "name": "Perfil Operativo 006",
-      "type_check_code": false,
-      "rate_code": 9,
-      "detail_exams": [
+      "code": 9,
+      "name": "ROSA EFE MODA S.A.C._3",
+      "lines": [
         {
-          "id": 79,
-          "name": "Examen 1",
-          "price_unit": 19.8
+          "exam_code": "001",
+          "exam_name": "Examen 1",
+          "exam_price": 17.82
         },
         {
-          "id": 80,
-          "name": "Examen 2",
-          "price_unit": 13.5
+          "exam_code": "002",
+          "exam_name": "Examen 2",
+          "exam_price": 12.15
         },
         {
-          "id": 81,
-          "name": "Examen 3",
-          "price_unit": 25.5
-        }
-      ]
-    },
-    {
-      "code": 42,
-      "customer_code": 7,
-      "name": "Perfil Operativo 007",
-      "type_check_code": false,
-      "rate_code": 10,
-      "detail_exams": [
+          "exam_code": "003",
+          "exam_name": "Examen 3",
+          "exam_price": 22.95
+        },
         {
-          "id": 84,
-          "name": "Evaluación psicológica básica",
-          "price_unit": 25.0
+          "exam_code": "004",
+          "exam_name": "Examen 4",
+          "exam_price": 36.0
         }
       ]
     }
